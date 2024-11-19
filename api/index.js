@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const User = require('./models/User');
+const { Parser } = require("json2csv");
 const cors = require('cors');
 require('dotenv').config();
 
@@ -94,6 +94,18 @@ app.get('/api/courses', async (req, res) => {
   }
 });
 
+app.get("/api/courses/:name", async (req, res) => {
+  const { name } = req.params;
+  const courseLink = name;
+  const course = await Course.findOne({ courseLink });
+  console.log(course);
+  
+  if (!course) {
+    return res.status(404).json({ message: "Course not found" });
+  }
+  res.json(course);
+});
+
 // Enquiry Routes
 app.post('/api/enquiries', async (req, res) => {
   try {
@@ -106,6 +118,37 @@ app.post('/api/enquiries', async (req, res) => {
   }
 });
 
+
+app.get("/api/download/:type", async (req, res) => {
+  const { type } = req.params;
+
+  try {
+    let opts;
+    let data = []
+    if (type === "enquiries") {
+      data = await Enquiry.find();
+      const fields = ['name', 'email', 'phone', 'department', 'course', 'mode', 'message'];
+      opts = { fields };
+    } else if (type === "contacts") {
+      data = await Contact.find();
+      const fields = ['fullName', 'email', 'phone', 'subject', 'message'];
+      opts = { fields };
+    } else {
+      return res.status(400).send("Invalid data type.");
+    }
+
+    const parser = new Parser(opts);
+    const csv = parser.parse(data);
+    res.setHeader("Content-Disposition", `attachment; filename=${type}.csv`);
+    res.setHeader("Content-Type", "text/csv");
+    res.status(200).send(csv);
+  } catch (error) {
+    console.error("Error generating CSV:", error);
+    res.status(500).send("Failed to download data.");
+  }
+});
+
+module.exports = app;
 
 
 

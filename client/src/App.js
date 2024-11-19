@@ -8,6 +8,7 @@ import Courselist from './Pages/Courselist';
 import SeperateCourse from './Pages/SeperateCourse';
 import Popup from './Components/Popup';
 import Enquire from './Pages/Enquire';
+import AdminPage from './Pages/AdminPage';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -30,6 +31,7 @@ function App() {
         )}
         <Routes>
           <Route path="/" Component={Homepage}></Route>
+          <Route path="/admin" Component={AdminPage}></Route>
           <Route path="/courses" Component={Courselist}></Route>
           <Route path="/courses/:name" Component={SeperateCourse}></Route>
           <Route path="/courses/:name/enquire" Component={Enquire}></Route>

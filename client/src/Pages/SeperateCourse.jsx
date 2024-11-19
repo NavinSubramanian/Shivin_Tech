@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,12 +9,11 @@ import {
   faCircleCheck,
   faCircleExclamation,
   faHeadphones,
-  faForwardFast,
+  faFastForward,
   faMobileScreen,
   faPeopleArrows,
   faBolt,
   faCertificate,
-  faFastForward,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "../Components/Header";
@@ -24,11 +23,52 @@ const SeperateCourse = () => {
   const navigate = useNavigate();
   const { name } = useParams();
 
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCourseDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/courses/${name}` // Replace with your API URL
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch course details");
+        }
+        const data = await response.json();
+        setCourse(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourseDetails();
+  }, [name]);
+
+  if (loading) {
+    return <p>Loading course details...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!course) {
+    return <p>Course not found.</p>;
+  }
+
   const chapters = [
-    { id: 1, title: 'Introduction' },
-    { id: 2, title: 'Getting Started' },
-    { id: 3, title: 'What is HTML' },
-    { id: 4, title: 'HTML Basics' },
+    { id: 1, title: 'Introduction to the Course' },
+    { id: 2, title: 'Fundamentals and Basic Concepts' },
+    { id: 3, title: 'Practical Training with Real-Life Examples' },
+    { id: 4, title: 'Progressive Skill Building' },
+    { id: 5, title: 'Collaborative Projects' },
+    { id: 6, title: 'Final Project' },
+    { id: 7, title: 'Certification Process' },
+    { id: 8, title: 'Post-Course Support' },
   ];
 
   return (
@@ -38,12 +78,11 @@ const SeperateCourse = () => {
       <div className="courseHeaders">
         <p className="hyperLinkNavs">
           <Link to="/courses">Courses</Link>
-          &gt; {name}
+          &gt; {course.title}
         </p>
 
         <h1>
-          <span>Full Stack Development Java:</span> Merging creativity and code
-          to build immersive digital experiences.
+          <span>{course.title}:</span> {course.subtitle}
         </h1>
       </div>
 
@@ -52,29 +91,24 @@ const SeperateCourse = () => {
           <div className="thumbnailsCourse">
             <div>
               <FontAwesomeIcon icon={faStar} />
-              4.6
+              {course.rating}
             </div>
             <div>
-              <FontAwesomeIcon icon={faCalendarDays} />2 Weeks
+              <FontAwesomeIcon icon={faCalendarDays} />
+              {course.duration}
             </div>
             <div>
               <FontAwesomeIcon icon={faClock} />
-              6hr 30mins
+              {course.time}
             </div>
           </div>
           <img
-            src="https://vtricks.in/lms/public/frontend/infixlmstheme/img/blog/full-stack-web-development.jpg"
-            alt="Course"
+            src={course.imageUrl}
+            alt={course.title}
             className="courseImage"
           />
           <h2>About this course</h2>
-          <p>
-            Embark on a journey through the dynamic world of Full Stack
-            Development, where every line of code opens a doorway to endless
-            possibilities. In this captivating field, developers are invited to
-            craft digital experiences that bring imagination to life through the
-            seamless integration of front and back-end technology.
-          </p>
+          <p>{course.about}</p>
           <h2>After completing the course you will be able to</h2>
           <ul>
             <li>
@@ -118,21 +152,23 @@ const SeperateCourse = () => {
               Availability to come to the training center.
             </li>
           </ul>
-          <h2>Chapters</h2>
+          <h2>Course Structure</h2>
           <div className="lesson-list">
-          {chapters.map((chapter, index) => (
-            <div key={chapter.id} className={`lesson-item`}>
-              <div className="lesson-info">
-                <span className="lesson-index">{String(index + 1).padStart(2, '0')}</span>
-                <span className="lesson-title">{chapter.title}</span>
+            {chapters.map((chapter, index) => (
+              <div key={chapter.id} className="lesson-item">
+                <div className="lesson-info">
+                  <span className="lesson-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="lesson-title">{chapter.title}</span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </div>
 
         <div className="fixedColumn">
-          <ul>
+        <ul>
             <li>
               <FontAwesomeIcon icon={faHeadphones} />
               English, Tamil
@@ -160,10 +196,15 @@ const SeperateCourse = () => {
           </ul>
           <hr />
           <p className="price">
-            ₹1099 <span>₹4999.00</span>
+            ₹{course.rate} <span>₹10000</span>
           </p>
           <hr />
-          <button className="enroll-button" onClick={()=>navigate(`/courses/fsd/enquire`)}>Enquire Today</button>
+          <button
+            className="enroll-button"
+            onClick={() => navigate(`/courses/${name}/enquire`)}
+          >
+            Enquire Today
+          </button>
         </div>
       </div>
 
