@@ -27,7 +27,7 @@ const Header = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/courses/search?query=${searchTerm}`
+          `https://shivin-tech-backend.vercel.app/api/courses/search?query=${searchTerm}`
         );
         setSuggestions(response.data);
       } catch (error) {

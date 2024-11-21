@@ -25,11 +25,13 @@ const Popup = ({ onClose }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/enquiries",
+        "https://shivin-tech-backend.vercel.app/api/enquiries",
         formData
       );
       setErrorMessage("");
-      setSuccessMessage("Successfully submitted, our team will reach you out soon.");
+      setSuccessMessage(
+        "Successfully submitted, our team will reach you out soon."
+      );
       setFormData({
         name: "",
         email: "",
@@ -108,7 +110,9 @@ const Popup = ({ onClose }) => {
             <option value="fsd-java">Full Stack Development - Java</option>
             <option value="fsd-.net">Full Stack Development - .Net</option>
             <option value="fsd-python">Full Stack Development - Python</option>
-            <option value="fsd-mern">Full Stack Development - Mern Stack</option>
+            <option value="fsd-mern">
+              Full Stack Development - Mern Stack
+            </option>
             <option value="ui/ux">UI/UX Designing</option>
             <option value="software testing">Software Testing</option>
             <option value="aws and devops">AWS and DevOps</option>

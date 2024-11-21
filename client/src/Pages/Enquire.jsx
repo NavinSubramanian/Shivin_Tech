@@ -32,7 +32,7 @@ const Enquire = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/enquiries",
+        "https://shivin-tech-backend.vercel.app/api/enquiries",
         formData
       );
       setShowPrompt(true);

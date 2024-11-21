@@ -31,7 +31,7 @@ const SeperateCourse = () => {
     const fetchCourseDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/courses/${name}` // Replace with your API URL
+          `https://shivin-tech-backend.vercel.app/api/courses/${name}` // Replace with your API URL
         );
         if (!response.ok) {
           throw new Error("Failed to fetch course details");

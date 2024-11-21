@@ -16,7 +16,9 @@ const Courselist = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/courses"); // Replace with your API URL
+        const response = await fetch(
+          "https://shivin-tech-backend.vercel.app/api/courses"
+        ); // Replace with your API URL
         const data = await response.json();
         setCourses(data);
       } catch (error) {

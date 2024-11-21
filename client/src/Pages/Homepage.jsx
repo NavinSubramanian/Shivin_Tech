@@ -38,7 +38,7 @@ const Homepage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact",
+        "https://shivin-tech-backend.vercel.app/api/contact",
         formData
       );
       setResponseMessage(response.data.message);
@@ -139,7 +139,9 @@ const Homepage = () => {
       role: "Software Developer",
       feedback: (
         <>
-          A Perfect Launchpad for My IT Career! This <b> exceeded my expectations with its hands-on training </b> and dedicated support.
+          A Perfect Launchpad for My IT Career! This{" "}
+          <b> exceeded my expectations with its hands-on training </b> and
+          dedicated support.
         </>
       ),
       date: "20/8/2024",
@@ -148,9 +150,10 @@ const Homepage = () => {
     {
       name: "Janet Stacy",
       role: "Software Developer",
-      feedback:(
+      feedback: (
         <>
-          <b>The trainers were incredibly knowledgeable</b>,{" "} and the flexible class timings made it easy to balance my studies with work.
+          <b>The trainers were incredibly knowledgeable</b>, and the flexible
+          class timings made it easy to balance my studies with work.
         </>
       ),
       date: "20/9/2024",
@@ -159,7 +162,7 @@ const Homepage = () => {
     {
       name: "Janet Stacy",
       role: "Software Developer",
-      feedback:(
+      feedback: (
         <>
           Thanks to their interview preparation and placement assistance,{" "}
           <b>I landed my first job</b> in tech!
@@ -186,8 +189,11 @@ const Homepage = () => {
             Path
           </h1>
 
-          <img src={body} alt="Student" className="profile-image profile-image-2" />
-
+          <img
+            src={body}
+            alt="Student"
+            className="profile-image profile-image-2"
+          />
 
           <p className="description">
             Unlock your potential with our affordable, flexible, and hands-on
@@ -196,8 +202,17 @@ const Homepage = () => {
           </p>
 
           <div className="button-group">
-            <button className="get-started" onClick={()=>{navigate('/courses')}}>Get Started</button>
-            <a href="#about" className="know-more"><button>Know More</button></a>
+            <button
+              className="get-started"
+              onClick={() => {
+                navigate("/courses");
+              }}
+            >
+              Get Started
+            </button>
+            <a href="#about" className="know-more">
+              <button>Know More</button>
+            </a>
           </div>
 
           <div className="tags">
@@ -217,7 +232,11 @@ const Homepage = () => {
         </div>
 
         <div className="image-content">
-          <img src={body} alt="Student" className="profile-image profile-image-1" />
+          <img
+            src={body}
+            alt="Student"
+            className="profile-image profile-image-1"
+          />
         </div>
       </section>
 
@@ -226,15 +245,22 @@ const Homepage = () => {
           <img src={about} alt="about" />
         </div>
         <div className="abt-right">
-          <p className="small-sub">
-            About us
-          </p>
+          <p className="small-sub">About us</p>
           <h1>Why we excel at what we do</h1>
           <p>
-            At Shivin Tech, we are driven by a passion for innovation, quality, and customer-centric solutions. Our mission is to provide exceptional services that address the unique challenges of our clients. Whether it's delivering personalized training, or implementing impactful strategies, we focus on fostering trust, ensuring satisfaction, and achieving long-term success.
+            At Shivin Tech, we are driven by a passion for innovation, quality,
+            and customer-centric solutions. Our mission is to provide
+            exceptional services that address the unique challenges of our
+            clients. Whether it's delivering personalized training, or
+            implementing impactful strategies, we focus on fostering trust,
+            ensuring satisfaction, and achieving long-term success.
             <br />
             <br />
-            With a dedicated team of skilled professionals, we combine expertise and technology to deliver results that matter. We take pride in adapting to industry trends and exceeding expectations at every step. We empower individuals and businesses to thrive in an ever-evolving landscape.
+            With a dedicated team of skilled professionals, we combine expertise
+            and technology to deliver results that matter. We take pride in
+            adapting to industry trends and exceeding expectations at every
+            step. We empower individuals and businesses to thrive in an
+            ever-evolving landscape.
           </p>
           <div className="features-list">
             <div className="feature-item">
@@ -293,7 +319,8 @@ const Homepage = () => {
             </div>
             <h3>Choose Your Course</h3>
             <p>
-            Explore our wide range of courses, tailored to suit your needs, and select the one that best fits your goals.
+              Explore our wide range of courses, tailored to suit your needs,
+              and select the one that best fits your goals.
             </p>
           </div>
           <div className="step-item">
@@ -303,7 +330,8 @@ const Homepage = () => {
             </div>
             <h3>Enquire and Connect</h3>
             <p>
-            Submit an enquiry for the chosen course. Our team will reach out to discuss timings, payments, and your preferred mode of study.
+              Submit an enquiry for the chosen course. Our team will reach out
+              to discuss timings, payments, and your preferred mode of study.
             </p>
           </div>
           <div className="step-item">
@@ -313,7 +341,9 @@ const Homepage = () => {
             </div>
             <h3>Learn and Engage</h3>
             <p>
-              Immerse yourself in interactive lessons and activities with our experienced mentors, engaging sessions, and a wealth of resources to achieve your goals.
+              Immerse yourself in interactive lessons and activities with our
+              experienced mentors, engaging sessions, and a wealth of resources
+              to achieve your goals.
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors()); 
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI,{
+mongoose.connect("mongodb+srv://admin:admin123@main.y3iqt.mongodb.net/",{
   retryWrites: true,
   w: 'majority',
 });

@@ -19,9 +19,12 @@ const AdminPage = () => {
 
   const downloadData = async (type) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/download/${type}`, {
-        responseType: "blob", 
-      });
+      const response = await axios.get(
+        `https://shivin-tech-backend.vercel.app/api/download/${type}`,
+        {
+          responseType: "blob",
+        }
+      );
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
