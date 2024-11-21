@@ -20,3 +20,6 @@ code {
   font-weight: 300 !important;
   margin-bottom: 10px;
 }
+h1{
+  font-size: clamp(2.2rem, 4vw, 3.4rem) !important; 
+}

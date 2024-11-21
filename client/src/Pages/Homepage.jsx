@@ -186,6 +186,9 @@ const Homepage = () => {
             Path
           </h1>
 
+          <img src={body} alt="Student" className="profile-image profile-image-2" />
+
+
           <p className="description">
             Unlock your potential with our affordable, flexible, and hands-on
             learning experience designed to boost your skills and career in
@@ -193,8 +196,8 @@ const Homepage = () => {
           </p>
 
           <div className="button-group">
-            <button className="get-started">Get Started</button>
-            <button className="know-more">Know More</button>
+            <button className="get-started" onClick={()=>{navigate('/courses')}}>Get Started</button>
+            <a href="#about" className="know-more"><button>Know More</button></a>
           </div>
 
           <div className="tags">
@@ -214,11 +217,11 @@ const Homepage = () => {
         </div>
 
         <div className="image-content">
-          <img src={body} alt="Student" className="profile-image" />
+          <img src={body} alt="Student" className="profile-image profile-image-1" />
         </div>
       </section>
 
-      <section className="about-section">
+      <section className="about-section" id="about">
         <div className="abt-left">
           <img src={about} alt="about" />
         </div>
@@ -228,16 +231,10 @@ const Homepage = () => {
           </p>
           <h1>Why we excel at what we do</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            At Shivin Tech, we are driven by a passion for innovation, quality, and customer-centric solutions. Our mission is to provide exceptional services that address the unique challenges of our clients. Whether it's delivering personalized training, or implementing impactful strategies, we focus on fostering trust, ensuring satisfaction, and achieving long-term success.
             <br />
             <br />
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            With a dedicated team of skilled professionals, we combine expertise and technology to deliver results that matter. We take pride in adapting to industry trends and exceeding expectations at every step. We empower individuals and businesses to thrive in an ever-evolving landscape.
           </p>
           <div className="features-list">
             <div className="feature-item">

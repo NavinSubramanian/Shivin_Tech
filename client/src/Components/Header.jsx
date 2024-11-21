@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // For making API calls
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
   faMap,
   faTags,
   faMagnifyingGlass,
+  faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,8 +16,8 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Fetch suggestions from the backend
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (searchTerm.trim() === "") {
@@ -45,9 +47,7 @@ const Header = () => {
     setShowSuggestions(true);
   };
 
-  // Website URL
-
-  const website_url = 'http://localhost:3000'; // Needs to be changed for the navigation to work
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header>
@@ -96,13 +96,16 @@ const Header = () => {
             </ul>
           )}
         </div>
-        <div className="navLinks">
+        <button className="menuToggle" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </button>
+        <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
           <h3><Link to='/'>Home</Link></h3>
           <h3><Link to='/about'>About Us</Link></h3>
           <h3><Link to='/courses'>Courses</Link></h3>
           <h3><a href='http://localhost:3000#blogs'>Blogs</a></h3>
           <h3><a href="http://localhost:3000#contact">Contact Us</a></h3>
-        </div>
+        </nav>
       </div>
     </header>
   );
