@@ -1,5 +1,8 @@
 import React from "react";
 
+import Arc1 from '../Assets/Images/arc-1.png'
+import Arc2 from '../Assets/Images/arc-2.png'
+
 const Footer = () => {
   return (
     <footer className="footerBody">
@@ -69,6 +72,8 @@ const Footer = () => {
       <div className="footerBottom">
         <p>Copyright © 2024 • A Product of thefanzer.com</p>
       </div>
+      <img src={Arc1} className="footerArcs Arc1" alt="" />
+      <img src={Arc2} className="footerArcs Arc2" alt="" />
     </footer>
   );
 };

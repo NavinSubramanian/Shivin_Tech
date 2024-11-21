@@ -42,8 +42,10 @@ const courseSchema = new mongoose.Schema({
   rating: { type: Number, required: true },
   about: { type: String, required: true },
   rate: { type: Number, required: true },
+  originalPrice: { type: Number, required: true },
   chapters: { type: Number, required: true},
   coursetype: { type: String, required: true},
+  benefits: { type: [String], required: true },
 });
 const Course = mongoose.model('Course', courseSchema);
 
@@ -64,7 +66,8 @@ const Enquiry = mongoose.model('Enquiry', enquirySchema);
 // Contact Routes
 app.post('/api/contact', async (req, res) => {
   try {
-    const { fullName, phone, email, subject, message } = req.body;
+    const { firstName, lastName, phone, email, subject, message } = req.body;
+    const fullName = firstName+" "+ lastName;
     const contact = new Contact({ fullName, phone, email, subject, message });
     await contact.save();
     res.status(201).json({ message: 'Contact form submitted successfully!', contact });
@@ -92,6 +95,17 @@ app.get('/api/courses', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+app.get('/api/courses/search', async (req, res) => {
+  const query = req.query.query;
+  
+  if (!query || query.trim() === '') {
+    return res.json([]); // Return empty array if query is empty
+  }
+
+  const courses = await Course.find({ title: { $regex: query, $options: 'i' } });
+  res.json(courses);
 });
 
 app.get("/api/courses/:name", async (req, res) => {

@@ -61,14 +61,14 @@ const SeperateCourse = () => {
   }
 
   const chapters = [
-    { id: 1, title: 'Introduction to the Course' },
-    { id: 2, title: 'Fundamentals and Basic Concepts' },
-    { id: 3, title: 'Practical Training with Real-Life Examples' },
-    { id: 4, title: 'Progressive Skill Building' },
-    { id: 5, title: 'Collaborative Projects' },
-    { id: 6, title: 'Final Project' },
-    { id: 7, title: 'Certification Process' },
-    { id: 8, title: 'Post-Course Support' },
+    { id: 1, title: "Introduction to the Course" },
+    { id: 2, title: "Fundamentals and Basic Concepts" },
+    { id: 3, title: "Practical Training with Real-Life Examples" },
+    { id: 4, title: "Progressive Skill Building" },
+    { id: 5, title: "Collaborative Projects" },
+    { id: 6, title: "Final Project" },
+    { id: 7, title: "Certification Process" },
+    { id: 8, title: "Post-Course Support" },
   ];
 
   return (
@@ -111,30 +111,14 @@ const SeperateCourse = () => {
           <p>{course.about}</p>
           <h2>After completing the course you will be able to</h2>
           <ul>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              Build Complete Web Applications from Front to Back
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              Gain Insight into User-Centered Design and Experience
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              Strengthen Problem-Solving and Coding Skills
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              Master Core Technologies Across the Full Stack
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              Develop an Appreciation for Scalable and Efficient Architecture
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleCheck} />
-              100% placement guarantee
-            </li>
+            {course.benefits.map((item, ind) => {
+              return (
+                <li>
+                  <FontAwesomeIcon icon={faCircleCheck} />
+                  {item}
+                </li>
+              );
+            })}
           </ul>
           <h2>Requirements</h2>
           <ul>
@@ -168,7 +152,7 @@ const SeperateCourse = () => {
         </div>
 
         <div className="fixedColumn">
-        <ul>
+          <ul>
             <li>
               <FontAwesomeIcon icon={faHeadphones} />
               English, Tamil
@@ -196,7 +180,7 @@ const SeperateCourse = () => {
           </ul>
           <hr />
           <p className="price">
-            ₹{course.rate} <span>₹10000</span>
+            ₹{course.rate} <span>₹{course.originalPrice}</span>
           </p>
           <hr />
           <button

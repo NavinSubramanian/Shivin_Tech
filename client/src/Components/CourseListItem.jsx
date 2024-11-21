@@ -17,7 +17,7 @@ const CourseListItem = (props) => {
         </div>
         <h2>{props.title}</h2>
         <p>{props.about.length > 100 ? props.about.slice(0, 100) + "..." : props.about}</p>
-        <Link to={`/courses/${props.courseLink}`}>View More &gt;</Link>
+        <Link to={`/courses/${props.courseLink}`}>View More</Link>
     </div>
   )
 }

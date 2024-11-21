@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "../Components/Header";
 import CourseListItem from "../Components/CourseListItem";
 
-import CourseImage from "../Assets/Images/Pixel_Working_04.jpg";
+import CourseImage from "../Assets/Images/certificate.png";
 import Footer from "../Components/Footer";
 
 const Courselist = () => {
@@ -23,25 +27,59 @@ const Courselist = () => {
     fetchCourses();
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     console.log(courses);
-  }, courses)
+  }, courses);
 
   return (
     <>
       <Header />
 
+      <div className="courseHeaders">
+        <p className="hyperLinkNavs">
+          <Link to="/">Home</Link>
+          &gt; All Courses
+        </p>
+      </div>
+
       <div className="topCourse">
         <div className="topCourseContent">
           <h1>Shivin Tech Courses</h1>
-          <p>Explore the various courses that can benefit you the best</p>
-          <button className="topCourseButton">Get Started</button>
+          <p>
+            Explore the various courses that can benefit you the best for the
+            placement
+          </p>
+          <h3>Top Skills</h3>
+          <div className="topSkills">
+            <div>
+              <FontAwesomeIcon icon={faBolt} />
+              <p>Be day-1 job ready</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faBolt} />
+              <p>Cheap courses</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faBolt} />
+              <p>Learn from industry Experts</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faBolt} />
+              <p>Learn anytime anywhere</p>
+            </div>
+          </div>
         </div>
-        <img
-          className="topCourseImage"
-          src={CourseImage}
-          alt="Shivin Tech Courses Illustration"
-        />
+        <div>
+          <img
+            className="topCourseImage"
+            src={CourseImage}
+            alt="Shivin Tech Courses Illustration"
+          />
+          <p>
+            <FontAwesomeIcon icon={faCircleCheck} />
+            Completion certificate is awarded on every course completion
+          </p>
+        </div>
       </div>
 
       <div className="courseListContainer">

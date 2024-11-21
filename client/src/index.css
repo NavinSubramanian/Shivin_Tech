@@ -14,3 +14,9 @@ code {
 /* Global CSS */
 
 
+.small-sub {
+  font-size: 1.2rem;
+  color: var(--primarycolor);
+  font-weight: 300 !important;
+  margin-bottom: 10px;
+}
