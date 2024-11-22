@@ -11,11 +11,30 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Homepage = () => {
   const navigate = useNavigate();
+
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const worksRef = useRef(null);
+
+  const heroInView = useInView(heroRef, {
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
+  const aboutInView = useInView(aboutRef, {
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
+  const worksInView = useInView(worksRef, {
+    once: true,
+    margin: "0px 0px -100px 0px",
+  });
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -177,8 +196,14 @@ const Homepage = () => {
     <>
       <Header />
 
-      <section className="hero-section">
-        <div className="text-content">
+      {/* Hero Section */}
+      <section className="hero-section" ref={heroRef}>
+        <motion.div
+          className="text-content"
+          initial={{ opacity: 0, x: -50 }}
+          animate={heroInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <h1>
             Up Your <span className="highlight">Skills</span> <br />
             To <span className="highlight">Advance</span> Your{" "}
@@ -216,35 +241,43 @@ const Homepage = () => {
           </div>
 
           <div className="tags">
-            <span className="tag">
-              <FaChalkboardTeacher style={{ color: "#FFD700" }} />
-              Public Speaking
-            </span>
-            <span className="tag">
-              <FaBriefcase style={{ color: "orange" }} />
-              Career-Oriented
-            </span>
-            <span className="tag">
-              <FaLightbulb style={{ color: "#B4708D" }} />
-              Creative Thinking
-            </span>
+            <span className="tag">Public Speaking</span>
+            <span className="tag">Career-Oriented</span>
+            <span className="tag">Creative Thinking</span>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="image-content">
+        <motion.div
+          className="image-content"
+          initial={{ opacity: 0, x: 50 }}
+          animate={heroInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <img
             src={body}
             alt="Student"
             className="profile-image profile-image-1"
           />
-        </div>
+        </motion.div>
       </section>
 
-      <section className="about-section" id="about">
-        <div className="abt-left">
+      {/* About Section */}
+      <section className="about-section" id="about" ref={aboutRef}>
+        <motion.div
+          className="abt-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={aboutInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <img src={about} alt="about" />
-        </div>
-        <div className="abt-right">
+        </motion.div>
+
+        <motion.div
+          className="abt-right"
+          initial={{ opacity: 0, x: 50 }}
+          animate={aboutInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <p className="small-sub">About us</p>
           <h1>Why we excel at what we do</h1>
           <p>
@@ -264,36 +297,41 @@ const Homepage = () => {
           </p>
           <div className="features-list">
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Ease of Scalability
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Instant Impact
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Experience
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Time Zones
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Full Flexibility
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="arrow icon" />
+              <img src={arrow} alt="" />
               Proactive Support
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="works">
-        <div className="works-container">
+      {/* How It Works Section */}
+      <section className="works" ref={worksRef}>
+        <motion.div
+          className="works-container"
+          initial={{ opacity: 0, y: 50 }}
+          animate={worksInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
           <div className="works-cont">
             <p className="small-sub">How it works</p>
             <h1>
@@ -309,44 +347,57 @@ const Homepage = () => {
               writing journey.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="steps-section">
-          <div className="step-item">
-            <div className="step-header">
-              <div className="step-number">01</div>
-              <div className="dotted-line"></div>
-            </div>
-            <h3>Choose Your Course</h3>
-            <p>
-              Explore our wide range of courses, tailored to suit your needs,
-              and select the one that best fits your goals.
-            </p>
-          </div>
-          <div className="step-item">
-            <div className="step-header">
-              <div className="step-number">02</div>
-              <div className="dotted-line"></div>
-            </div>
-            <h3>Enquire and Connect</h3>
-            <p>
-              Submit an enquiry for the chosen course. Our team will reach out
-              to discuss timings, payments, and your preferred mode of study.
-            </p>
-          </div>
-          <div className="step-item">
-            <div className="step-header">
-              <div className="step-number">03</div>
-              <div className="dotted-line"></div>
-            </div>
-            <h3>Learn and Engage</h3>
-            <p>
-              Immerse yourself in interactive lessons and activities with our
-              experienced mentors, engaging sessions, and a wealth of resources
-              to achieve your goals.
-            </p>
-          </div>
-        </div>
+        <motion.div
+          className="steps-section"
+          initial="hidden"
+          animate={worksInView ? "visible" : "hidden"}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+        >
+          {[
+            {
+              stepNumber: "01",
+              title: "Choose Your Course",
+              description:
+                "Explore our wide range of courses, tailored to suit your needs, and select the one that best fits your goals.",
+            },
+            {
+              stepNumber: "02",
+              title: "Enquire and Connect",
+              description:
+                "Submit an enquiry for the chosen course. Our team will reach out to discuss timings, payments, and your preferred mode of study.",
+            },
+            {
+              stepNumber: "03",
+              title: "Learn and Engage",
+              description:
+                "Immerse yourself in interactive lessons and activities with our experienced mentors, engaging sessions, and a wealth of resources to achieve your goals.",
+            },
+          ].map((step, index) => (
+            <motion.div
+              className="step-item"
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={worksInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="step-header">
+                <div className="step-number">{step.stepNumber}</div>
+                <div className="dotted-line"></div>
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       <section className="courses">

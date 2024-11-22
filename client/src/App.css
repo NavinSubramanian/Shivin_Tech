@@ -599,7 +599,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   background-color: #f0e6ff;
-  border: 1px solid var(--primarycolor);
+  border: 1px solid #5d56f1;
 }
 
 .lesson-info {
@@ -642,7 +642,6 @@ body {
 @media (min-width: 1024px) {
   .courseContainer {
     max-width: 1200px;
-    margin: 20px auto;
     gap: 40px;
   }
 
@@ -1440,6 +1439,11 @@ textarea {
   color: white;
   font-family: var(--mainfont);
   margin-top: 40px;
+  transition: 0.3s;
+}
+
+.all-courses:hover{
+  letter-spacing: 2px;
 }
 
 /* courses page */
@@ -1687,6 +1691,9 @@ textarea {
   .contact-us{
     padding: 50px 20px;
   }
+  .map-section{
+    padding: 50px 20px;
+  }
 }
 
 
@@ -1711,7 +1718,8 @@ textarea {
 }
 
 .testimonial-card:hover {
-  transform: translateY(-10px);
+  transform: scale(105%);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Card Header */
@@ -1951,9 +1959,8 @@ textarea {
 }
 .textAbout>h1{
   border-left: 3px solid var(--maincolor);
-  padding-left: 6px;
   font-family: var(--subfont);
-  font-weight: 800;
+  font-weight: 300;
   color: var(--maincolor);
   font-size: 15px;
 }
@@ -1968,6 +1975,13 @@ textarea {
 .textAbout > p {
   font-family: var(--subfont);
   margin-top: 20px;
+  margin-bottom: 10px;
+}
+.textAbout > p:first-child{
+  border-left: 3px solid var(--primarycolor);
+  padding-left: 10px;
+  font-weight: 600;
+  color: var(--primarycolor);
 }
 
 .about {
