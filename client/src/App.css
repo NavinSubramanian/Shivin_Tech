@@ -6,7 +6,7 @@
 
 :root {
   --primarycolor: #ff7519;
-  --primarylight: #fdd2b6;
+  --primarylight: #fcdac3c4;
 
   /* --primarycolor: #5d56f1;
   --primarylight: #ccd6df91; */
@@ -88,6 +88,7 @@ header > div {
   border: none;
   padding: 7px 3px;
   outline: none;
+  font-family: var(--mainfont);
 }
 .searchBar > button {
   padding: 4px 15px;
@@ -95,6 +96,10 @@ header > div {
   border: none;
   border-radius: 5px;
   color: var(--primarycolor);
+  font-weight: 700;
+  font-size: 11px;
+  font-family: var(--mainfont);
+  text-transform: uppercase;
 }
 
 .suggestions {
@@ -1322,6 +1327,18 @@ textarea {
   margin-bottom: 20px;
 }
 
+@media (max-width:915px){
+  .arrow-section{
+    bottom: -80px;
+  }
+  .arrow-section > img:first-child{
+    width: 150px;
+  }
+  .arrow-section > img:last-child{
+    width: 100px;
+  }
+}
+
 .courses {
   padding: 50px 20px;
   position: relative;
@@ -1417,8 +1434,8 @@ textarea {
   padding: 10px 12px;
   background-color: var(--primarycolor);
   border: 1px solid #ddd;
+  border-radius: 15px;
   border-left: none;
-  border-radius: 0 4px 4px 0;
   cursor: pointer;
   color: white;
   font-family: var(--mainfont);
@@ -1660,10 +1677,24 @@ textarea {
   }
 }
 
+@media (max-width:580px){
+  .contact-form-container{
+    padding: 10px;
+  }
+}
+
+@media (max-width:480px){
+  .contact-us{
+    padding: 50px 20px;
+  }
+}
+
+
 /* Testimonials Wrapper */
 .testimonials-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }

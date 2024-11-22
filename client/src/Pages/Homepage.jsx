@@ -148,8 +148,8 @@ const Homepage = () => {
       image: "https://via.placeholder.com/50", // Replace with actual image URL
     },
     {
-      name: "Janet Stacy",
-      role: "Software Developer",
+      name: "Paul S",
+      role: "Dev-ops Head ",
       feedback: (
         <>
           <b>The trainers were incredibly knowledgeable</b>, and the flexible
@@ -160,8 +160,8 @@ const Homepage = () => {
       image: "https://via.placeholder.com/50", // Replace with actual image URL
     },
     {
-      name: "Janet Stacy",
-      role: "Software Developer",
+      name: "Monica",
+      role: "Junior Developer",
       feedback: (
         <>
           Thanks to their interview preparation and placement assistance,{" "}
