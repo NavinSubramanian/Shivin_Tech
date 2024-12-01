@@ -6,6 +6,7 @@ import Header from "../Components/Header";
 import About1 from "../Assets/Images/about-1.png";
 import About2 from "../Assets/Images/about-2.png";
 import About3 from "../Assets/Images/home.jpg";
+import Reveal from "../Components/Utils/Reveal";
 
 const AboutUs = () => {
   return (
@@ -13,7 +14,7 @@ const AboutUs = () => {
       <Header />
       <div className="aboutWrapper">
         <div className="about_container1">
-          <div className="textAbout">
+          <Reveal animation="slideFromLeft" classn="textAbout">
             <p style={{ marginTop: "30px" }}>ABOUT US</p>
             <h1>Get to know more about our company</h1>
             <p>
@@ -25,13 +26,17 @@ const AboutUs = () => {
               learner is equipped with the tools and confidence to achieve their
               career goals and secure their dream placements.
             </p>
-          </div>
-          <img className="about" src={About1} alt="about1" />
+          </Reveal>
+          <Reveal animation="slideFromRight" classn="about">
+            <img src={About1} alt="about1" />
+          </Reveal>
         </div>
 
         <div className="about_container2">
-          <img className="about2" src={About2} alt="" />
-          <div className="about2p">
+          <Reveal animation="slideFromLeft" classn="about2">
+            <img src={About2} alt="" />
+          </Reveal>
+          <Reveal animation="slideFromRight" classn="about2p">
             <h1 style={{ marginTop: "30px" }}>History of our Company</h1>
             <p style={{ marginTop: "10px", maxWidth: "600px" }}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
@@ -47,22 +52,22 @@ const AboutUs = () => {
               illum! Sunt fuga, ducimus atque earum recusandae similique dolorum
               mollitia quia corporis. Optio, unde dignissimos! Impedit!
             </p>
-          </div>
+          </Reveal>
         </div>
 
         <div className="about_container3" style={{ marginTop: "50px" }}>
-          <img src={About3} alt="" draggable="false" />
+          <img src={About3} className="lapOnlyImage" alt="" draggable="false" />
 
-          <div className="servicesTextLeft">
+          <Reveal animation="fadeIn" classn="servicesTextLeft">
             <h1>We Provide Awesome Services</h1>
-            <img src={About3} alt="" draggable="false" />
+            <img src={About3} className="mobileOnlyImage" alt="" draggable="false" />
             <p>
               Experience the extraordinary with our services. We don't just meet
               expectations—we exceed them. Discover a world where quality,
               reliability, and innovation come together to create truly awesome
               solutions for all your needs.
             </p>
-          </div>
+          </Reveal>
         </div>
       </div>
       <Footer />

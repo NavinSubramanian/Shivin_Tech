@@ -12,6 +12,7 @@ import Footer from "../Components/Footer";
 
 const Courselist = () => {
   const [courses, setCourses] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -21,6 +22,7 @@ const Courselist = () => {
         ); // Replace with your API URL
         const data = await response.json();
         setCourses(data);
+        setIsLoaded(true);
       } catch (error) {
         console.error("Error fetching courses:", error);
       }
@@ -85,22 +87,28 @@ const Courselist = () => {
       </div>
 
       <div className="courseListContainer">
-        {courses.map((course) => (
-          <CourseListItem
-            key={course._id}
-            title={course.title}
-            subtitle={course.subtitle}
-            imageUrl={course.imageUrl}
-            duration={course.duration}
-            time={course.time}
-            rating={course.rating}
-            about={course.about}
-            rate={course.rate}
-            courseLink={course.courseLink}
-            chapters={course.chapters}
-            coursetype={course.coursetype}
-          />
-        ))}
+        {!isLoaded ? (
+          <p style={{color:'red', margin:'20px 0'}}>Loading....</p>
+        ) : (
+          <>
+            {courses.map((course) => (
+              <CourseListItem
+                key={course._id}
+                title={course.title}
+                subtitle={course.subtitle}
+                imageUrl={course.imageUrl}
+                duration={course.duration}
+                time={course.time}
+                rating={course.rating}
+                about={course.about}
+                rate={course.rate}
+                courseLink={course.courseLink}
+                chapters={course.chapters}
+                coursetype={course.coursetype}
+              />
+            ))}
+          </>
+        )}
       </div>
 
       <Footer />

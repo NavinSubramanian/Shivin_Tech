@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const CourseListItem = (props) => {
   return (
     <div className='courseListItem'>
-        <img src={`${props.imageUrl}`} alt="" />
+        <img src={`${props.imageUrl}`} className='courseCardImage' alt="" />
         <div className='courseTags'>
             <p className='ptagSVG'>
                 <FontAwesomeIcon icon={faBook} />

@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
+import mainLogo from '../Assets/Images/mainLogo.jpeg'
+
 const Header = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,14 +68,15 @@ const Header = () => {
       </div>
       <div className="bottomNav">
         <img
-          src="https://icons.veryicon.com/png/o/miscellaneous/hfy/temporary-1.png"
+          src={mainLogo}
           alt="Main Logo"
+          onClick={()=>{navigate('/')}}
         />
         <div className="searchBar">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input
             type="text"
-            placeholder="Want to learn?"
+            placeholder="Search courses..."
             value={searchTerm}
             onChange={handleInputChange}
             onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}

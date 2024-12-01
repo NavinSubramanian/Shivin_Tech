@@ -18,6 +18,7 @@ import {
 
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import Reveal from "../Components/Utils/Reveal";
 
 const SeperateCourse = () => {
   const navigate = useNavigate();
@@ -80,15 +81,16 @@ const SeperateCourse = () => {
           <Link to="/courses">Courses</Link>
           &gt; {course.title}
         </p>
-
-        <h1>
-          <span>{course.title}:</span> {course.subtitle}
-        </h1>
+        <Reveal animation="fadeIn">
+          <h1>
+            <span>{course.title}:</span> {course.subtitle}
+          </h1>
+        </Reveal>
       </div>
 
       <div className="courseContainer">
         <div className="scrollableColumn">
-          <div className="thumbnailsCourse">
+          <Reveal animation="fadeIn" classn="thumbnailsCourse">
             <div>
               <FontAwesomeIcon icon={faStar} />
               {course.rating}
@@ -101,15 +103,23 @@ const SeperateCourse = () => {
               <FontAwesomeIcon icon={faClock} />
               {course.time}
             </div>
-          </div>
-          <img
-            src={course.imageUrl}
-            alt={course.title}
-            className="courseImage"
-          />
-          <h2>About this course</h2>
-          <p>{course.about}</p>
-          <h2>After completing the course you will be able to</h2>
+          </Reveal>
+          <Reveal animation="slideFromLeft" classn="courseImage">
+            <img
+              src={course.imageUrl}
+              alt={course.title}
+              className="courseImage"
+            />
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <h2>About this course</h2>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <p style={{fontWeight:'300'}}>{course.about}</p>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <h2>After completing the course you will be able to</h2>
+          </Reveal>
           <ul>
             {course.benefits.map((item, ind) => {
               return (
@@ -188,6 +198,7 @@ const SeperateCourse = () => {
             onClick={() => navigate(`/courses/${name}/enquire`)}
           >
             Enquire Today
+            <div class="shine"></div>
           </button>
         </div>
       </div>

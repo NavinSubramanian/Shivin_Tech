@@ -11,30 +11,12 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import axios from "axios";
 import { useState, useRef } from "react";
+import Reveal from "../Components/Utils/Reveal";
 
 const Homepage = () => {
   const navigate = useNavigate();
-
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const worksRef = useRef(null);
-
-  const heroInView = useInView(heroRef, {
-    once: true,
-    margin: "0px 0px -100px 0px",
-  });
-  const aboutInView = useInView(aboutRef, {
-    once: true,
-    margin: "0px 0px -100px 0px",
-  });
-  const worksInView = useInView(worksRef, {
-    once: true,
-    margin: "0px 0px -100px 0px",
-  });
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -197,104 +179,169 @@ const Homepage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero-section" ref={heroRef}>
-        <motion.div
-          className="text-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={heroInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <h1>
-            Up Your <span className="highlight">Skills</span> <br />
-            To <span className="highlight">Advance</span> Your{" "}
-            <span className="highlight">
-              <br />
-              Career
-            </span>{" "}
-            Path
-          </h1>
+      <section className="hero-section">
+        <div>
+          <Reveal animation="slideFromLeft">
+            <h1>
+              Up Your <span className="highlight">Skills</span> <br />
+              To <span className="highlight">Advance</span> Your{" "}
+              <span className="highlight">
+                <br />
+                Career
+              </span>{" "}
+              Path
+            </h1>
 
-          <img
-            src={body}
-            alt="Student"
-            className="profile-image profile-image-2"
-          />
+            {/* <h1>
+            From training to placement, <br /> we're with you every step <br />- Shivin Tech.
+            </h1> */}
+          </Reveal>
 
-          <p className="description">
-            Unlock your potential with our affordable, flexible, and hands-on
-            learning experience designed to boost your skills and career in
-            Information Technology.
-          </p>
+          <Reveal animation="slideFromLeft">
+            <img
+              src={body}
+              alt="Student"
+              className="profile-image profile-image-2"
+            />
+          </Reveal>
 
-          <div className="button-group">
-            <button
-              className="get-started"
-              onClick={() => {
-                navigate("/courses");
-              }}
-            >
-              Get Started
-            </button>
-            <a href="#about" className="know-more">
-              <button>Know More</button>
-            </a>
-          </div>
+          <Reveal animation="slideFromLeft">
+            <p className="description">
+              Unlock your potential with our affordable, flexible, and hands-on
+              learning experience designed to boost your skills and career in
+              Information Technology.
+            </p>
+          </Reveal>
+
+          <Reveal animation="slideFromLeft">
+            <div className="button-group">
+              <button
+                className="get-started"
+                onClick={() => {
+                  navigate("/courses");
+                }}
+              >
+                Get Started
+              </button>
+              <a href="#about" className="know-more">
+                <button>Know More</button>
+              </a>
+            </div>
+          </Reveal>
 
           <div className="tags">
-            <span className="tag">Public Speaking</span>
-            <span className="tag">Career-Oriented</span>
-            <span className="tag">Creative Thinking</span>
+            <span className="tag">
+              <FaChalkboardTeacher style={{ color: "#FFD700" }} />
+              Public Speaking
+            </span>
+            <span className="tag">
+              <FaBriefcase style={{ color: "orange" }} />
+              Career-Oriented
+            </span>
+            <span className="tag">
+              <FaLightbulb style={{ color: "#B4708D" }} />
+              Creative Thinking
+            </span>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="image-content"
-          initial={{ opacity: 0, x: 50 }}
-          animate={heroInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+        <Reveal animation="slideFromRight">
           <img
             src={body}
             alt="Student"
             className="profile-image profile-image-1"
           />
-        </motion.div>
+        </Reveal>
+      </section>
+
+      <section className="slider_section">
+        <p className="small-sub">Trusted partners</p>
+        <div className="mainSlider">
+          <div>
+            <div className="sliderItem" style={{ "--position": 1 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 2 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 3 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 4 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 5 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 6 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 7 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 8 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 9 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+            <div className="sliderItem" style={{ "--position": 10 }}>
+              <img
+                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* About Section */}
-      <section className="about-section" id="about" ref={aboutRef}>
-        <motion.div
-          className="abt-left"
-          initial={{ opacity: 0, x: -50 }}
-          animate={aboutInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+      <section className="about-section" id="about">
+        <Reveal animation="slideFromLeft" classn="abt-left">
           <img src={about} alt="about" />
-        </motion.div>
-
-        <motion.div
-          className="abt-right"
-          initial={{ opacity: 0, x: 50 }}
-          animate={aboutInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="small-sub">About us</p>
-          <h1>Why we excel at what we do</h1>
-          <p>
-            At Shivin Tech, we are driven by a passion for innovation, quality,
-            and customer-centric solutions. Our mission is to provide
-            exceptional services that address the unique challenges of our
-            clients. Whether it's delivering personalized training, or
-            implementing impactful strategies, we focus on fostering trust,
-            ensuring satisfaction, and achieving long-term success.
-            <br />
-            <br />
-            With a dedicated team of skilled professionals, we combine expertise
-            and technology to deliver results that matter. We take pride in
-            adapting to industry trends and exceeding expectations at every
-            step. We empower individuals and businesses to thrive in an
-            ever-evolving landscape.
-          </p>
+        </Reveal>
+        <div className="abt-right">
+          <Reveal animation="fadeIn">
+            <p className="small-sub">About us</p>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <h1>Why we excel at what we do</h1>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <p>
+            At VR Shivin Technologies, we pride ourselves on our practical, hands-on training approach that bridges the gap between classroom learning and real-world challenges. Our training programs are designed to give you a 360-degree understanding of cutting-edge technologies, ensuring that you’re not just job-ready but future-ready.
+              <br />
+              <br />
+              What sets us apart is our commitment to real-time exposure and practical learning. Our courses are crafted to include day-to-day course plans, comprehensive lab handouts, and real-time projects and case studies to ensure that you gain in-depth knowledge of the subject matter. With experienced trainers from top MNCs, we bring corporate expertise into every session, preparing you for the challenges of the IT world.
+            </p>
+          </Reveal>
           <div className="features-list">
             <div className="feature-item">
               <img src={arrow} alt="" />
@@ -321,17 +368,12 @@ const Homepage = () => {
               Proactive Support
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="works" ref={worksRef}>
-        <motion.div
-          className="works-container"
-          initial={{ opacity: 0, y: 50 }}
-          animate={worksInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+      <section className="works">
+        <Reveal animation="fadeIn" classn="works-container">
           <div className="works-cont">
             <p className="small-sub">How it works</p>
             <h1>
@@ -347,21 +389,9 @@ const Homepage = () => {
               writing journey.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
-        <motion.div
-          className="steps-section"
-          initial="hidden"
-          animate={worksInView ? "visible" : "hidden"}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.3,
-              },
-            },
-          }}
-        >
+        <Reveal animation="fadeIn" classn="steps-section">
           {[
             {
               stepNumber: "01",
@@ -382,36 +412,36 @@ const Homepage = () => {
                 "Immerse yourself in interactive lessons and activities with our experienced mentors, engaging sessions, and a wealth of resources to achieve your goals.",
             },
           ].map((step, index) => (
-            <motion.div
-              className="step-item"
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={worksInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
+            <div className="step-item">
               <div className="step-header">
                 <div className="step-number">{step.stepNumber}</div>
                 <div className="dotted-line"></div>
               </div>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </Reveal>
       </section>
 
       <section className="courses">
         <div className="courses-intro">
-          <p className="small-sub">Featured Courses</p>
-          <h1>Browse our popular courses</h1>
-          <p>
-            Discover our curated selection of featured courses, meticulously
-            crafted to provide you with the essential skills and knowledge to
-            excel. With expert instruction and interactive learning experiences,
-            our featured courses offer unparalleled opportunities to expand your
-            creative horizons and transform your passion for writing into
-            tangible success.
-          </p>
+          <Reveal animation="fadeIn">
+            <p className="small-sub">Featured Courses</p>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <h1 className="main-Title">Browse our popular courses</h1>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <p className="course-Para">
+              Discover our curated selection of featured courses, meticulously
+              crafted to provide you with the essential skills and knowledge to
+              excel. With expert instruction and interactive learning
+              experiences, our featured courses offer unparalleled opportunities
+              to expand your creative horizons and transform your passion for
+              writing into tangible success.
+            </p>
+          </Reveal>
         </div>
         <div className="course-cards">
           {featuredCourses.map((course, index) => (
@@ -461,16 +491,16 @@ const Homepage = () => {
       </section>
 
       <section className="why">
-        <div className="why-header">
-          <p className="small-sub">Why Choose Us</p>
-          <h1 className="why-title">
-            The Benefits You Get When
-            <br />
-            You Study at Shivinntech
-          </h1>
-        </div>
+        <Reveal animation="fadeIn" classn="why-header">
+            <p className="small-sub">Why Choose Us</p>
+            <h1 className="why-title">
+              The Benefits You Get When
+              <br />
+              You Study at Shivinntech
+            </h1>
+        </Reveal>
 
-        <div className="features-container">
+        <Reveal animation="slideFromLeft" classn="features-container">
           {features.map((feature, index) => (
             <div
               className="feature-card"
@@ -489,12 +519,16 @@ const Homepage = () => {
               <p>{feature.description}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       <section className="testimonials">
-        <p className="small-sub">See what our clients say</p>
-        <h1 className="section-title">Testimonials</h1>
+        <Reveal animation="fadeIn">
+          <p className="small-sub">See what our clients say</p>
+        </Reveal>
+        <Reveal animation="fadeIn">
+          <h1 className="section-title">Testimonials</h1>
+        </Reveal>
         <div className="testimonials-wrapper">
           {testimonials.map((testimonial, index) => (
             <div className="testimonial-card" key={index}>
@@ -520,9 +554,9 @@ const Homepage = () => {
         <div className="cont-left">
           <p>Contact us</p>
           <h1>Get in touch with us today</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+          <p style={{marginTop:'15px'}}>
+            Any form of doubts are accepted and our team are always ready to
+            answer you questions!
           </p>
         </div>
 
@@ -603,11 +637,13 @@ const Homepage = () => {
 
       <section className="map-section">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15550.691235021843!2d80.08325160835386!3d12.992766833124152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528aa64f1f758b%3A0xbfca0f9632a31459!2sKundrathur%2C%20Chennai%2C%20Tamil%20Nadu%20600069!5e0!3m2!1sen!2sin!4v1732088006183!5m2!1sen!2sin"
-          style={{ border: 0 }}
-          allowfullscreen=""
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94998.08862409573!2d80.01591526877414!3d12.848280374734525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7d92614c87d%3A0x1c023f745c85a3dc!2sSHIVIN%20TECH%20Urapakkam!5e0!3m2!1sen!2sin!4v1732172530909!5m2!1sen!2sin"
+          width="60%"
+          height="400"
+          style={{ border: "0" }}
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
 
