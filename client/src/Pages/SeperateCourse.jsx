@@ -20,7 +20,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Reveal from "../Components/Utils/Reveal";
 
-const SeperateCourse = () => {
+const SeperateCourse = ({ onOpenPopup }) => {
   const navigate = useNavigate();
   const { name } = useParams();
 
@@ -74,7 +74,7 @@ const SeperateCourse = () => {
 
   return (
     <>
-      <Header />
+      <Header onOpenPopup={onOpenPopup} />
 
       <div className="courseHeaders">
         <p className="hyperLinkNavs">
@@ -120,32 +120,38 @@ const SeperateCourse = () => {
           <Reveal animation="fadeIn">
             <h2>After completing the course you will be able to</h2>
           </Reveal>
-          <ul>
-            {course.benefits.map((item, ind) => {
-              return (
-                <li>
-                  <FontAwesomeIcon icon={faCircleCheck} />
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-          <h2>Requirements</h2>
-          <ul>
-            <li>
-              <FontAwesomeIcon icon={faCircleExclamation} />
-              We don't require any prior experience. Just bring your passion for
-              learning!
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleExclamation} />
-              Access to the Internet.
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faCircleExclamation} />
-              Availability to come to the training center.
-            </li>
-          </ul>
+          <Reveal animation="fadeIn">
+            <ul>
+              {course.benefits.map((item, ind) => {
+                return (
+                  <li>
+                    <FontAwesomeIcon icon={faCircleCheck} />
+                    {item}
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <h2>Requirements</h2>
+          </Reveal>
+          <Reveal animation="fadeIn">
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faCircleExclamation} />
+                We don't require any prior experience. Just bring your passion for
+                learning!
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCircleExclamation} />
+                Access to the Internet.
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCircleExclamation} />
+                Availability to come to the training center.
+              </li>
+            </ul>
+          </Reveal>
           <h2>Course Structure</h2>
           <div className="lesson-list">
             {chapters.map((chapter, index) => (

@@ -6,7 +6,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Prompt from "../Components/Prompt";
 
-const Enquire = () => {
+const Enquire = ({ onOpenPopup }) => {
   const { name } = useParams();
 
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const Enquire = () => {
 
   return (
     <>
-      <Header />
+      <Header onOpenPopup={onOpenPopup} />
 
       <div className="enquiry-container">
         <h2 className="enquiry-title">Enquiry Form</h2>

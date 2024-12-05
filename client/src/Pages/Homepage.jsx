@@ -1,5 +1,5 @@
 import body from "../Assets/Images/landing-image-1.png";
-import about from "../Assets/Images/image1.png";
+import about from "../Assets/Images/tempgroup.png";
 import arrow from "../Assets/Images/arrow.png";
 import leftarrow from "../Assets/Images/left-arrow.png";
 import rightarrow from "../Assets/Images/right-arrow.png";
@@ -15,7 +15,7 @@ import axios from "axios";
 import { useState, useRef } from "react";
 import Reveal from "../Components/Utils/Reveal";
 
-const Homepage = () => {
+const Homepage = ({ onOpenPopup }) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -136,21 +136,19 @@ const Homepage = () => {
 
   const testimonials = [
     {
-      name: "Janet Stacy",
-      role: "Software Developer",
+      name: "Jayasree",
+      role: "Fullstack - Java",
       feedback: (
         <>
-          A Perfect Launchpad for My IT Career! This{" "}
-          <b> exceeded my expectations with its hands-on training </b> and
-          dedicated support.
+          The best platform for learning Selenium and Java, where the <b>trainers are highly supportive</b>. Even after completing the course, their guidance and responsiveness have been exceptional.
         </>
       ),
-      date: "20/8/2024",
-      image: "https://via.placeholder.com/50", // Replace with actual image URL
+      date: "20/8/2023",
+      image: "https://i.pinimg.com/736x/35/28/bd/3528bdb208de23338919adc00eeefa48.jpg",
     },
     {
-      name: "Paul S",
-      role: "Dev-ops Head ",
+      name: "Saatwik",
+      role: "AWS and Dev-ops",
       feedback: (
         <>
           <b>The trainers were incredibly knowledgeable</b>, and the flexible
@@ -158,43 +156,32 @@ const Homepage = () => {
         </>
       ),
       date: "20/9/2024",
-      image: "https://via.placeholder.com/50", // Replace with actual image URL
+      image: "https://i.pinimg.com/236x/2e/44/f3/2e44f3552b32a499b75411bfab6c2d3b.jpg",
     },
     {
-      name: "Monica",
-      role: "Junior Developer",
+      name: "Krithika Natarajan",
+      role: "Selinium Python",
       feedback: (
         <>
-          Thanks to their interview preparation and placement assistance,{" "}
-          <b>I landed my first job</b> in tech!
+          Our trainer, has helped us learn more about Python and has given us <b>daily assignments</b> to help us become stronger Python programmers.
         </>
       ),
       date: "20/9/2024",
-      image: "https://via.placeholder.com/50", // Replace with actual image URL
+      image: "https://static.fandomspot.com/images/07/7845/01-yukinoshita-yukino-girl-black-hair-anime-oregairu.jpg",
     },
   ];
 
   return (
     <>
-      <Header />
+      <Header onOpenPopup={onOpenPopup} />
 
       {/* Hero Section */}
       <section className="hero-section">
         <div>
           <Reveal animation="slideFromLeft">
             <h1>
-              Up Your <span className="highlight">Skills</span> <br />
-              To <span className="highlight">Advance</span> Your{" "}
-              <span className="highlight">
-                <br />
-                Career
-              </span>{" "}
-              Path
+            From <span className="highlight">training to <br /> placement</span>, we're with <br />you every step - <span className="highlight"> Shivin Tech</span>
             </h1>
-
-            {/* <h1>
-            From training to placement, <br /> we're with you every step <br />- Shivin Tech.
-            </h1> */}
           </Reveal>
 
           <Reveal animation="slideFromLeft">
@@ -255,7 +242,7 @@ const Homepage = () => {
       </section>
 
       <section className="slider_section">
-        <p className="small-sub">Trusted partners</p>
+        <p className="small-sub">Placed Companies</p>
         <div className="mainSlider">
           <div>
             <div className="sliderItem" style={{ "--position": 1 }}>
@@ -332,7 +319,7 @@ const Homepage = () => {
             <p className="small-sub">About us</p>
           </Reveal>
           <Reveal animation="fadeIn">
-            <h1>Why we excel at what we do</h1>
+            <h1>Why we <span className="highlight"> excel at</span> what we do</h1>
           </Reveal>
           <Reveal animation="fadeIn">
             <p>
@@ -345,19 +332,19 @@ const Homepage = () => {
           <div className="features-list">
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Ease of Scalability
+              Scalable Solutions
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Instant Impact
+              Immediate Results
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Experience
+              Industry Expertise
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Time Zones
+              Significant Growth
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
@@ -365,7 +352,7 @@ const Homepage = () => {
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Proactive Support
+              Dedicated Support
             </div>
           </div>
         </div>
@@ -377,7 +364,7 @@ const Homepage = () => {
           <div className="works-cont">
             <p className="small-sub">How it works</p>
             <h1>
-              Your Learning Journey
+              Your <span className="highlight"> Learning Journey</span>
               <br />
               Made Easy
             </h1>
@@ -496,7 +483,7 @@ const Homepage = () => {
             <h1 className="why-title">
               The Benefits You Get When
               <br />
-              You Study at Shivinntech
+              You Study at <span className="highlight">Shivin tech</span>
             </h1>
         </Reveal>
 
@@ -543,7 +530,11 @@ const Homepage = () => {
                   <p className="client-role">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="feedback">{testimonial.feedback}</p>
+              <p className="feedback">
+                {testimonial.feedback.length > 30 
+                  ? `${testimonial.feedback.slice(0, 30)}...` 
+                  : testimonial.feedback}
+              </p>
               <p className="feedback-date">{testimonial.date}</p>
             </div>
           ))}

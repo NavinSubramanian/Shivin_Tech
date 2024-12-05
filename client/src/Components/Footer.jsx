@@ -2,6 +2,7 @@ import React from "react";
 
 import Arc1 from '../Assets/Images/arc-1.png'
 import Arc2 from '../Assets/Images/arc-2.png'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,13 +20,13 @@ const Footer = () => {
             <h3>Company</h3>
             <ul>
               <li>
-                <a href="#">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="#">Career</a>
+                <Link to="/about">Career</Link>
               </li>
               <li>
-                <a href="#">Partners</a>
+                <Link to="/about">Placements</Link>
               </li>
             </ul>
           </div>
@@ -33,13 +34,13 @@ const Footer = () => {
             <h3>Overview</h3>
             <ul>
               <li>
-                <a href="#">Courses</a>
+                <Link to="/courses">Courses</Link>
               </li>
               <li>
-                <a href="#">Bootcamp</a>
+                <Link to="/blogs">Blogs</Link>
               </li>
               <li>
-                <a href="#">Our Graduates</a>
+                <a href="#testimonials">Testimonials</a>
               </li>
             </ul>
           </div>
@@ -47,13 +48,13 @@ const Footer = () => {
             <h3>Explore Us</h3>
             <ul>
               <li>
-                <a href="#">Our Career</a>
+                <Link to="/about">About us</Link>
               </li>
               <li>
-                <a href="#">Privacy</a>
+                <Link to="/privacy">Privacy</Link>
               </li>
               <li>
-                <a href="#">Terms & Conditions</a>
+                <Link to="/terms">Terms & Conditions</Link>
               </li>
             </ul>
           </div>
@@ -63,8 +64,8 @@ const Footer = () => {
           <h3>Connect Us</h3>
           <ul>
             <li>admin@xyz.com</li>
-            <li>021 - 654 - 249</li>
-            <li>Serpong, South Tangerang</li>
+            <li>+91 93453 77563</li>
+            <li>VR Shivin Tech, Urapakkam</li>
           </ul>
         </div>
       </div>

@@ -3,17 +3,18 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
-  faMap,
-  faTags,
   faMagnifyingGlass,
   faBars,
+  faEnvelope,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import {faWhatsapp, faFacebookF, faInstagram} from "@fortawesome/free-brands-svg-icons"
+
 import { Link, useNavigate } from "react-router-dom";
 
 import mainLogo from '../Assets/Images/mainLogo.jpeg'
 
-const Header = () => {
+const Header = ({ onOpenPopup }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -56,14 +57,16 @@ const Header = () => {
       <div className="topNav">
         <div>
           <FontAwesomeIcon icon={faPhone} />
-          <p>+91 92830 72832</p>
-          <div></div>
-          <FontAwesomeIcon icon={faMap} />
-          <p>81 Cross Street, Main Road 5th No.18</p>
+          <p>+91 93453 77563</p>
+          <FontAwesomeIcon icon={faPhone} />
+          <p>+91 93453 77563</p> 
+          <FontAwesomeIcon icon={faEnvelope} />
+          <p>infotech@gmail.com</p>
         </div>
-        <div>
-          <FontAwesomeIcon icon={faTags} />
-          <p>Prices may vary due to running deals!</p>
+        <div className="socialIcons">
+        <FontAwesomeIcon icon={faInstagram} style={{padding:'6px'}} />
+        <FontAwesomeIcon icon={faFacebookF} style={{padding:'6px 8px  '}} />
+        <FontAwesomeIcon icon={faWhatsapp} style={{padding:'6px'}} />
         </div>
       </div>
       <div className="bottomNav">
@@ -72,6 +75,14 @@ const Header = () => {
           alt="Main Logo"
           onClick={()=>{navigate('/')}}
         />
+        <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
+          <button className="dropMessage mobButton">Drop a Message &nbsp; &#8599;</button>
+          <h3><Link to='/'>Home</Link></h3>
+          <h3><Link to='/about'>About Us</Link></h3>
+          <h3><Link to='/courses'>Courses</Link></h3>
+          <h3><Link to='/blogs'>Blogs</Link></h3>
+          <h3><a href="http://localhost:3000#contact">Contact Us</a></h3>
+        </nav>
         <div className="searchBar">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input
@@ -82,7 +93,6 @@ const Header = () => {
             onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
             onFocus={() => setShowSuggestions(true)}
           />
-          <button type="submit">Explore</button>
 
           {showSuggestions && suggestions.length > 0 && (
             <ul className="suggestions">
@@ -99,16 +109,11 @@ const Header = () => {
             </ul>
           )}
         </div>
+        <button className="dropMessage lapButton" onClick={onOpenPopup}>Drop a Message &nbsp; &#8599;</button>
         <button className="menuToggle" onClick={toggleMenu}>
           <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
         </button>
-        <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
-          <h3><Link to='/'>Home</Link></h3>
-          <h3><Link to='/about'>About Us</Link></h3>
-          <h3><Link to='/courses'>Courses</Link></h3>
-          <h3><a href='http://localhost:3000#blogs'>Blogs</a></h3>
-          <h3><a href="http://localhost:3000#contact">Contact Us</a></h3>
-        </nav>
+
       </div>
     </header>
   );

@@ -10,7 +10,7 @@ import CourseListItem from "../Components/CourseListItem";
 import CourseImage from "../Assets/Images/certificate.png";
 import Footer from "../Components/Footer";
 
-const Courselist = () => {
+const Courselist = ({ onOpenPopup }) => {
   const [courses, setCourses] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -37,7 +37,7 @@ const Courselist = () => {
 
   return (
     <>
-      <Header />
+      <Header onOpenPopup={onOpenPopup} />
 
       <div className="courseHeaders">
         <p className="hyperLinkNavs">

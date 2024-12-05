@@ -10,34 +10,67 @@ import Popup from './Components/Popup';
 import Enquire from './Pages/Enquire';
 import AdminPage from './Pages/AdminPage';
 import AboutUs from './Pages/AboutUs';
+import BlogList from './Pages/BlogList';
+import BlogPage from './Pages/BlogPage';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
 
+  // Show popup automatically after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 5000);
 
+    return () => clearTimeout(timer); // Cleanup timeout
   }, []);
+
+  // Function to open the popup when the button is clicked
+  const handleOpenPopup = () => {
+    setShowPopup(true);
+  };
 
   const onClose = () => {
     setShowPopup(false);
-  }
+  };
 
   return (
     <BrowserRouter>
-        {showPopup && (
-          <Popup onClose={onClose} />
-        )}
-        <Routes>
-          <Route path="/" Component={Homepage}></Route>
-          <Route path="/admin" Component={AdminPage}></Route>
-          <Route path="/about" Component={AboutUs}></Route>
-          <Route path="/courses" Component={Courselist}></Route>
-          <Route path="/courses/:name" Component={SeperateCourse}></Route>
-          <Route path="/courses/:name/enquire" Component={Enquire}></Route>
-        </Routes>
+      {showPopup && <Popup onClose={onClose} />}
+      <Routes>
+        <Route
+          path="/"
+          element={<Homepage onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/admin"
+          element={<AdminPage onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/about"
+          element={<AboutUs onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/blogs"
+          element={<BlogList onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/blogs/:id"
+          element={<BlogPage onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/courses"
+          element={<Courselist onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/courses/:name"
+          element={<SeperateCourse onOpenPopup={handleOpenPopup} />}
+        ></Route>
+        <Route
+          path="/courses/:name/enquire"
+          element={<Enquire onOpenPopup={handleOpenPopup} />}
+        ></Route>
+      </Routes>
     </BrowserRouter>
   );
 }

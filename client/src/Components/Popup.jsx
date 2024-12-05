@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import mainLogo from '../Assets/Images/mainLogo.jpeg'
+
 
 const Popup = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    department: "",
+    department: null,
     course: "",
     mode: "",
     message: "",
@@ -36,7 +38,7 @@ const Popup = ({ onClose }) => {
         name: "",
         email: "",
         phone: "",
-        department: "",
+        department: null,
         course: "",
         mode: "",
         message: "",
@@ -57,7 +59,7 @@ const Popup = ({ onClose }) => {
         {successMessage && <p className="success-message">{successMessage}</p>}
         <img
           className="popupLogo"
-          src="https://yourlogo.com/logo.png"
+          src={mainLogo}
           alt="Logo"
         />
         <form className="popupForm" onSubmit={handleSubmit}>
@@ -86,15 +88,6 @@ const Popup = ({ onClose }) => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            id="department"
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            placeholder="Enter your department"
             required
           />
           <select
