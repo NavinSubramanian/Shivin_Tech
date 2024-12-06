@@ -91,10 +91,10 @@ const SeperateCourse = ({ onOpenPopup }) => {
       <div className="courseContainer">
         <div className="scrollableColumn">
           <Reveal animation="fadeIn" classn="thumbnailsCourse">
-            <div>
+            {/* <div>
               <FontAwesomeIcon icon={faStar} />
               {course.rating}
-            </div>
+            </div> */}
             <div>
               <FontAwesomeIcon icon={faCalendarDays} />
               {course.duration}

@@ -74,6 +74,9 @@ header > div:last-child {
   display: flex;
   column-gap: 20px;
 }
+.socialIcons.mobSocial{
+  display: none;
+}
 .socialIcons svg{
   border-left: 2px solid white;
   border-right: 2px solid white;
@@ -208,10 +211,6 @@ header > div:last-child {
 }
 
 @media (max-width: 1100px) {
-  .topNav p,
-  .topNav svg {
-    font-size: 9px !important;
-  }
 
   .dropMessage{
     margin-bottom: 20px;
@@ -271,6 +270,30 @@ header > div:last-child {
   }
   .searchBar{
     width: 200px;
+  }
+
+  .topNav{
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .topNav p, .topNav svg{
+    font-size: 10px !important;
+  }
+  .topNav > div:last-child{
+    display: none;
+  }
+  .socialIcons{
+    display: none;
+  }
+  .socialIcons.mobSocial{
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .socialIcons.mobSocial svg{
+    background-color: var(--primarycolor);
+    color: white;
   }
 }
 
@@ -2420,6 +2443,7 @@ textarea {
   margin: 0 auto;
   margin-top: 50px;
   padding: 0 10px;
+  gap: 20px;
 }
 
 .blog-card {
@@ -2507,6 +2531,8 @@ textarea {
 
 .featured-image {
   width: 100%;
+  max-width: 600px;
+  object-fit: cover;
 }
 
 .featured-article .content {

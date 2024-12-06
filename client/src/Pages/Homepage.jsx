@@ -64,9 +64,7 @@ const Homepage = ({ onOpenPopup }) => {
       info: "Build dynamic web applications using MongoDB, Express.js, React, and Node.js for seamless front-end and back-end integration.",
       lessons: 12,
       duration: "6 hr 40 mins",
-      rating: 4.8,
-      reviews: "5.8K",
-      price: 6000.0,
+      rating: "Best Seller",
       link: "/courses/full-stack-mern",
       imgSrc:
         "https://codingbytes.com/wp-content/uploads/2022/03/full-stack-web-development.jpg",
@@ -77,10 +75,8 @@ const Homepage = ({ onOpenPopup }) => {
       info: "Analyze, visualize, and interpret complex datasets using advanced tools and techniques to drive informed decision-making.",
       lessons: 12,
       duration: "14 hr 20 mins",
-      rating: 4.8,
+      rating: "Best Seller",
       link: "/courses/data-science",
-      reviews: "5.8K",
-      price: 30.0,
       imgSrc:
         "https://cdn.prod.website-files.com/63ccf2f0ea97be12ead278ed/644a18b637053fa3709c5ba2_what-is-data-science.jpg",
     },
@@ -91,9 +87,7 @@ const Homepage = ({ onOpenPopup }) => {
       lessons: 12,
       duration: "5 hr 45 mins",
       link: "/courses/ui-ux",
-      rating: 4.8,
-      reviews: "5.8K",
-      price: 60.0,
+      rating: "Best Seller",
       imgSrc:
         "https://new.mobitouch.pl/wp-content/uploads/2023/09/UI-Designera_-Blog-Main.jpg",
     },
@@ -348,11 +342,11 @@ const Homepage = ({ onOpenPopup }) => {
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Full Flexibility
+              Dedicated Support
             </div>
             <div className="feature-item">
               <img src={arrow} alt="" />
-              Dedicated Support
+              Full Flexibility
             </div>
           </div>
         </div>
@@ -442,7 +436,7 @@ const Homepage = ({ onOpenPopup }) => {
                 <div className="course-header">
                   <span className="category">{course.category}</span>
                   <p className="rating">
-                    ⭐ {course.rating} ({course.reviews})
+                    ⭐ {course.rating}
                   </p>
                 </div>
                 <h3 className="course-title">{course.title}</h3>

@@ -12,6 +12,9 @@ import AdminPage from './Pages/AdminPage';
 import AboutUs from './Pages/AboutUs';
 import BlogList from './Pages/BlogList';
 import BlogPage from './Pages/BlogPage';
+import Terms from './Pages/Terms';
+import Privacy from './Pages/Privacy';
+import ScrollToTop from './Components/Utils/ScrollToTop';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -36,6 +39,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       {showPopup && <Popup onClose={onClose} />}
       <Routes>
         <Route
@@ -70,6 +74,8 @@ function App() {
           path="/courses/:name/enquire"
           element={<Enquire onOpenPopup={handleOpenPopup} />}
         ></Route>
+        <Route path='/terms' element={<Terms />}></Route>
+        <Route path='/privacy' element={<Privacy />}></Route>
       </Routes>
     </BrowserRouter>
   );

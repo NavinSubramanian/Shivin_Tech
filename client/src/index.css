@@ -5,14 +5,11 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-
 /* Global CSS */
-
 
 .small-sub {
   font-size: 1.2rem;
@@ -20,9 +17,23 @@ code {
   font-weight: 300 !important;
   margin-bottom: 10px;
 }
-h1{
-  font-size: clamp(2.2rem, 4vw, 3.4rem) !important; 
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem) !important;
 }
 .highlight {
   color: var(--primarycolor);
+}
+
+.termsBody > * {
+  margin: 10px;
+}
+.termsBody > ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
 }
