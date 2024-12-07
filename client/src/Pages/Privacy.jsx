@@ -101,11 +101,11 @@ const Privacy = () => {
             <strong>Website</strong> refers to Shivin Tech,
             accessible from{" "}
             <a
-              href="https://www.google.com/"
+              href="https://shivintechnologies.in"
               rel="external nofollow noopener"
               target="_blank"
             >
-              https://www..in/ -- Domain needed
+              https://shivintechnologies.in
             </a>
           </p>
         </li>

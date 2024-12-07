@@ -241,61 +241,61 @@ const Homepage = ({ onOpenPopup }) => {
           <div>
             <div className="sliderItem" style={{ "--position": 1 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1280px-Accenture.svg.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 2 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 3 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 4 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://logos-world.net/wp-content/uploads/2023/03/Cognizant-Logo.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 5 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/2560px-Wipro_Primary_Logo_Color_RGB.svg.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 6 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://www.cdnlogo.com/logos/c/78/capgemini-201x.svg"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 7 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://download.logo.wine/logo/HCL_Technologies/HCL_Technologies-Logo.wine.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 8 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Ramco_Systems_logo.png/1200px-Ramco_Systems_logo.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 9 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://1000logos.net/wp-content/uploads/2021/05/HTC-logo.png"
                 alt=""
               />
             </div>
             <div className="sliderItem" style={{ "--position": 10 }}>
               <img
-                src="https://purepng.com/public/uploads/large/purepng.com-disney-logologobrand-logoiconslogos-251519939495wtv86.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/1200px-Qualcomm-Logo.svg.png"
                 alt=""
               />
             </div>

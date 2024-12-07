@@ -68,12 +68,22 @@ const Header = ({ onOpenPopup }) => {
           <p>infotech@gmail.com</p>
         </div>
         <div className="socialIcons">
-          <FontAwesomeIcon icon={faInstagram} style={{ padding: "6px" }} />
-          <FontAwesomeIcon
-            icon={faFacebookF}
-            style={{ padding: "6px 8px  " }}
-          />
-          <FontAwesomeIcon icon={faWhatsapp} style={{ padding: "6px" }} />
+          <a
+            href="https://www.instagram.com/vr_shivin.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} style={{ padding: "6px" }} />
+          </a>
+          <a href="https://wa.me/917904262162" target="_blank">
+            <FontAwesomeIcon
+              icon={faFacebookF}
+              style={{ padding: "6px 8px  " }}
+            />
+          </a>
+          <a href="https://wa.me/917904262162" target="_blank">
+            <FontAwesomeIcon icon={faWhatsapp} style={{ padding: "6px" }} />
+          </a>
         </div>
       </div>
       <div className="bottomNav">
@@ -109,7 +119,7 @@ const Header = ({ onOpenPopup }) => {
             <Link to="/blogs">Blogs</Link>
           </h3>
           <h3>
-            <a href="http://localhost:3000#contact">Contact Us</a>
+            <a href="https://shivintechnologies.in#contact">Contact Us</a>
           </h3>
         </nav>
         <div className="searchBar">
