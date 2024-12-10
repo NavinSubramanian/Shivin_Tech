@@ -63,7 +63,7 @@ const Header = ({ onOpenPopup }) => {
           <FontAwesomeIcon icon={faPhone} />
           <p>+91 93453 77563</p>
           <FontAwesomeIcon icon={faPhone} />
-          <p>+91 93453 77563</p>
+          <p>+91 89460 97977</p>
           <FontAwesomeIcon icon={faEnvelope} />
           <p>infotech@gmail.com</p>
         </div>

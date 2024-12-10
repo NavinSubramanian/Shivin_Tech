@@ -236,7 +236,7 @@ const Homepage = ({ onOpenPopup }) => {
       </section>
 
       <section className="slider_section">
-        <p className="small-sub">Placed Companies</p>
+        <p className="small-sub">Where Our Achievers Shine</p>
         <div className="mainSlider">
           <div>
             <div className="sliderItem" style={{ "--position": 1 }}>
