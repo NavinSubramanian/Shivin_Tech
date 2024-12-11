@@ -3,9 +3,6 @@ import React from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
-import About1 from "../Assets/Images/about-1.png";
-import About2 from "../Assets/Images/about-2.png";
-import About3 from "../Assets/Images/home.jpg";
 import One from "../Assets/Images/one.png";
 import Two from "../Assets/Images/two.png";
 import Three from "../Assets/Images/three.png";
@@ -22,7 +19,7 @@ const AboutUs = ({ onOpenPopup }) => {
               <p style={{ marginTop: "30px" }}>ABOUT US</p>
               <h1>Get to know more <span className="highlight">about our company</span> and our <span className="highlight">goals</span></h1>
             </div>
-            <img src="https://lh5.googleusercontent.com/p/AF1QipPZ752L11QOuuy6xj4FCX1NpIhdCyvQWn8K-SXI=w203-h289-k-no" className="about" alt="about1" />
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPZ752L11QOuuy6xj4FCX1NpIhdCyvQWn8K-SXI=w203-h289-k-no" loading="lazy" className="about" alt="about1" />
           </Reveal>
           <Reveal animation="slideFromRight" classn="about1bottom">
             <p>
@@ -57,7 +54,7 @@ const AboutUs = ({ onOpenPopup }) => {
 
         <div className="about_container2">
           <Reveal animation="slideFromLeft" classn="about2">
-            <img src="https://lh5.googleusercontent.com/p/AF1QipMY0qPrcuGPt5yPe_jB7LOIB1crI20DHdHfrs3K=w203-h152-k-no" alt="" />
+            <img src="https://lh5.googleusercontent.com/p/AF1QipMY0qPrcuGPt5yPe_jB7LOIB1crI20DHdHfrs3K=w203-h152-k-no" loading="lazy" alt="" />
           </Reveal>
           <Reveal animation="slideFromRight" classn="about2p">
             <h1 style={{ marginTop: "30px" }}>Company <span className="highlight">Culture</span></h1>
@@ -88,15 +85,15 @@ const AboutUs = ({ onOpenPopup }) => {
           </Reveal>
           <Reveal animation="fadeIn" classn="servicesProv">
             <div>
-              <img src={One} alt="" />
+              <img src={One} alt="one" loading="lazy" />
               <p><b>Classroom Training:</b> Engaging and interactive sessions guided by expert instructors.</p>
             </div>
             <div>
-              <img src={Two} alt="" />
+              <img src={Two} alt="two" loading="lazy" />
               <p><b>Corporate Training:</b> Tailored programs to upskill professionals for career advancement.</p>
             </div>
             <div>
-              <img src={Three} alt="" />
+              <img src={Three} alt="three" loading="lazy" />
               <p><b>Video-Based Training:</b> Flexible learning options for remote learners.</p>
             </div>
           </Reveal>

@@ -182,6 +182,7 @@ const Homepage = ({ onOpenPopup }) => {
             <img
               src={body}
               alt="Student"
+              loading="lazy"
               className="profile-image profile-image-2"
             />
           </Reveal>
@@ -231,6 +232,7 @@ const Homepage = ({ onOpenPopup }) => {
             src={body}
             alt="Student"
             className="profile-image profile-image-1"
+            loading="lazy"
           />
         </Reveal>
       </section>
@@ -242,61 +244,71 @@ const Homepage = ({ onOpenPopup }) => {
             <div className="sliderItem" style={{ "--position": 1 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1280px-Accenture.svg.png"
-                alt=""
+                alt="accenture"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 2 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png"
-                alt=""
+                alt="infosys"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 3 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png"
-                alt=""
+                alt="tcs"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 4 }}>
               <img
                 src="https://logos-world.net/wp-content/uploads/2023/03/Cognizant-Logo.png"
-                alt=""
+                alt="cognizant"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 5 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/2560px-Wipro_Primary_Logo_Color_RGB.svg.png"
-                alt=""
+                alt="wipro"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 6 }}>
               <img
                 src="https://www.cdnlogo.com/logos/c/78/capgemini-201x.svg"
-                alt=""
+                alt="capgemini"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 7 }}>
               <img
                 src="https://download.logo.wine/logo/HCL_Technologies/HCL_Technologies-Logo.wine.png"
-                alt=""
+                alt="hcl"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 8 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Ramco_Systems_logo.png/1200px-Ramco_Systems_logo.png"
-                alt=""
+                alt="ramco"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 9 }}>
               <img
                 src="https://1000logos.net/wp-content/uploads/2021/05/HTC-logo.png"
-                alt=""
+                alt="htc"
+                loading="lazy"
               />
             </div>
             <div className="sliderItem" style={{ "--position": 10 }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/1200px-Qualcomm-Logo.svg.png"
-                alt=""
+                alt="qualcomm"
+                loading="lazy"
               />
             </div>
           </div>
@@ -306,7 +318,7 @@ const Homepage = ({ onOpenPopup }) => {
       {/* About Section */}
       <section className="about-section" id="about">
         <Reveal animation="slideFromLeft" classn="abt-left">
-          <img src={about} alt="about" />
+          <img src={about} alt="about" loading="lazy" />
         </Reveal>
         <div className="abt-right">
           <Reveal animation="fadeIn">
@@ -325,27 +337,27 @@ const Homepage = ({ onOpenPopup }) => {
           </Reveal>
           <div className="features-list">
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Scalable Solutions
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Immediate Results
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Industry Expertise
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Significant Growth
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Dedicated Support
             </div>
             <div className="feature-item">
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow-point" loading="lazy" />
               Full Flexibility
             </div>
           </div>
@@ -431,6 +443,7 @@ const Homepage = ({ onOpenPopup }) => {
                 src={course.imgSrc}
                 alt={course.title}
                 className="course-image"
+                loading="lazy"
               />
               <div className="course-content">
                 <div className="course-header">
@@ -466,8 +479,8 @@ const Homepage = ({ onOpenPopup }) => {
         </div>
 
         <div className="arrow-section">
-          <img src={leftarrow} alt="" />
-          <img src={rightarrow} alt="" />
+          <img src={leftarrow} alt="left-arrow" loading="lazy" />
+          <img src={rightarrow} alt="right-arrow" loading="lazy" />
         </div>
       </section>
 
